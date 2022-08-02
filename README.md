@@ -11,20 +11,23 @@ Things you may want to cover:
 
 
 * Ruby version
+  ruby 3.0.0 ,rails 7.0.1 which is already mentioned in gemfile
+  
+  additional gem used : 
+  device gem
+  administratie gem
 
 * System dependencies
 
-* Configuration
 
 * Database creation
+ run command :
+* rails db:migrate
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+run app : 
+localhost:3000
 
 * ...
 # MyApp
