@@ -13,12 +13,6 @@ Things you may want to cover:
 * Ruby version
   ruby 3.0.0 ,rails 7.0.1 which is already mentioned in gemfile
   
-  additional gem used : 
-  device gem
-  administratie gem
-
-* System dependencies
-
 
 * Database creation
  run command :
