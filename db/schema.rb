@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_02_085044) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_02_124748) do
   create_table "bank_accounts", force: :cascade do |t|
     t.decimal "balance"
     t.string "account_number"
@@ -21,11 +21,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_02_085044) do
   end
 
   create_table "nominees", force: :cascade do |t|
-    t.bigint "main_account_id", null: false
-    t.bigint "nominee_account_id", null: false
+    t.integer "bank_account_id", null: false
     t.string "weightage"
+    t.integer "main_account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["bank_account_id"], name: "index_nominees_on_bank_account_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,4 +43,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_02_085044) do
   end
 
   add_foreign_key "bank_accounts", "users"
+  add_foreign_key "nominees", "bank_accounts"
 end

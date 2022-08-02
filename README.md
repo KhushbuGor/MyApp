@@ -5,6 +5,11 @@ application up and running.
 
 Things you may want to cover:
 
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
+
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-community-brightgreen.svg)](https://rubystyle.guide)
+
+
 * Ruby version
 
 * System dependencies

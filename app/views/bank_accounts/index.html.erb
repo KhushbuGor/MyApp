@@ -1,0 +1,28 @@
+<p>Your Account Details</p>
+
+<div class = "container-fluid">
+
+<p style="color: green"><%= notice %></p>
+
+<h1 align="center">Physicians</h1>
+<div style="margin-left:20px">
+<%= link_to "Add New physician", new_physician_path, class: "btn btn-primary" %>
+</div>
+<% @physicians.each do |physician| %>
+<div class="d-flex flex-row flex-wrap">
+  
+
+<div class="card  bg-light mb-3" style="width: 18rem;border-radius: 5%;margin:20px">
+  <div class="card-body">
+
+    <p class="card-text">
+    <%= render physician %>
+    </p>
+    <%= link_to "Show this physician", physician ,class: "btn-sm btn-primary"%>
+  </div>
+</div>
+
+<% end %>
+
+</div>
+</div>

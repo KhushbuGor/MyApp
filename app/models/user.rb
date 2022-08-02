@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   after_save :create_account
+  has_one :bank_account
   
   def create_account
     if BankAccount.find_by(user_id: self.id).blank?

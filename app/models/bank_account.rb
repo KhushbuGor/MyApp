@@ -1,5 +1,6 @@
 class BankAccount < ApplicationRecord
-	has_and_belongs_to_many :bank_accounts
+	has_many :nominees
+
 
   belongs_to :user, optional: true 
   validates_presence_of :user, if: :user_id_present?

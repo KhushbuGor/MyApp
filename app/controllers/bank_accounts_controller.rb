@@ -5,6 +5,7 @@ class BankAccountsController < ApplicationController
 
   def new
     @bank_account = BankAccount.new
+    @nominees = @bank_account
   end
 
   def create
@@ -44,11 +45,12 @@ class BankAccountsController < ApplicationController
 
   def show
     @bank_account = BankAccount.find(params[:id])
+    @nominees = @bank_account.nominees
   end
 
   private
 
   def bank_account_params
-    params.require(:bank_account).permit(:account_number, :client_id)
+    params.require(:bank_account).permit(:account_number, :user_id)
   end
 end

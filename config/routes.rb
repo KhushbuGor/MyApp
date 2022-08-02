@@ -12,9 +12,10 @@ Rails.application.routes.draw do
     get "users", to: "devise/sessions#new"
     # Defines the root path route ("/")
   end
-  
+  resources :bank_accounts
+  resources :nominees
     devise_for :users
   
 
-  # root "articles#index"
+  root "bank_accounts#index"
 end
