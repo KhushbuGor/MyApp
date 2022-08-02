@@ -1,11 +1,15 @@
 class ApplicationController < ActionController::Base
-    before_action :signed_in?
+    
     before_action :authenticate_user! 
     
     private
   
-    def signed_in?
-      redirect_to root_path unless session[:user_id].present? && @user = User.find(session[:user_id])
-    end
+    # def authenticate_user!
+    #     return if user_signed_in?
+    
+    #     # We need this hack for handling redirection after success tenant registration
+    #     flash[:notice] = params[:flash_notice] if params[:flash_notice].present?
+    #     redirect_to new_user_session_path
+    #   end
 
 end

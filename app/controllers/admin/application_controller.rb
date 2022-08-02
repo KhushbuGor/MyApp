@@ -7,11 +7,22 @@
 module Admin
   class ApplicationController < Administrate::ApplicationController
     before_action :authenticate_admin
+    before_action :authenticate_user!
+    
 
     def authenticate_admin
       # TODO Add authentication logic here.
     end
 
+  
+      # def authenticate_user!
+      #   return if user_signed_in?
+    
+      #   # We need this hack for handling redirection after success tenant registration
+      #   flash[:notice] = params[:flash_notice] if params[:flash_notice].present?
+      #   # redirect_to new_user_session_path
+      # end
+  
     # Override this value to specify the number of elements to display at a time
     # on index pages. Defaults to 20.
     # def records_per_page
