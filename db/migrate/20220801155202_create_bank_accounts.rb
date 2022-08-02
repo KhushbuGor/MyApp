@@ -4,7 +4,6 @@ class CreateBankAccounts < ActiveRecord::Migration[7.0]
       
       t.decimal :balance
       t.string :account_number
-
       t.timestamps
     end
   end

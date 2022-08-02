@@ -10,20 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_02_054346) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_02_085044) do
   create_table "bank_accounts", force: :cascade do |t|
     t.decimal "balance"
     t.string "account_number"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "middle_name"
-    t.string "string"
-    t.string "contact_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_bank_accounts_on_user_id"
+  end
+
+  create_table "nominees", force: :cascade do |t|
+    t.bigint "main_account_id", null: false
+    t.bigint "nominee_account_id", null: false
+    t.string "weightage"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "models", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
+    t.bigint "bank_account_id"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -31,8 +37,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_02_054346) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_models_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bank_accounts", "users"
 end
