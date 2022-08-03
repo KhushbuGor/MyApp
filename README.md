@@ -10,21 +10,20 @@ Things you may want to cover:
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-community-brightgreen.svg)](https://rubystyle.guide)
 
 
+ 
 * Ruby version
 
-* System dependencies
-
-* Configuration
+-- ruby version 3.0.0 , rails version 7.0.1 which is mentioned in gemfile 
 
 * Database creation
+-- rails db:migrate 
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+
+-- run command 'rails s'
+
+-- rubocop used for best practice 
 
 * ...
 # MyApp
